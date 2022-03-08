@@ -1,0 +1,41 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    list-style: none;
+    text-decoration: none;
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+    color: white;
+}
+.left-content {
+    display: flex;
+    flex-direction: column;
+    background-color: #0066A0;
+    height: 93vh;
+    width: 18vw;
+}
+.account {
+    border-bottom: 1px solid rgba(175, 175, 175,0.5);
+    height: 70px;
+    display: flex;
+    align-items: center;
+    
+}
+.account ul{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+}
+.account ul li span {
+    margin-left: 7px;
+    position: absolute;
+    font-size: 20px;
+}
+.li-settings {
+    margin-left: 12px;
+    margin-right: 12px;
+}
+.account ul li .fa-user-plus {
+    font-size: 30px;
+}
