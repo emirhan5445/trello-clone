@@ -8,6 +8,7 @@
     color: white;
 }
 .left-content {
+    border-right: 1px solid rgba(175, 175, 175,0.5);
     display: flex;
     flex-direction: column;
     background-color: #0066A0;
@@ -39,3 +40,101 @@
 .account ul li .fa-user-plus {
     font-size: 30px;
 }
+.fa-angle-left {
+    padding: 8px 13px;
+}
+.fa-angle-left:hover {
+    background-color: #3887B4;
+    border-radius: 3px;
+}
+.actions {
+    height: 125px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.actions ul li {
+    margin-bottom: 10px;
+    cursor: pointer;
+    padding: 3px;
+    width: 300px;
+    margin-left: 0;
+    padding-left: 13px;
+
+}
+.actions ul li:first-child {
+    margin-bottom: 7px !important;
+    margin-left: 0;
+    margin-top: 7px;
+    padding-left: 8px;
+}
+.actions ul li:hover {
+    background-color: #3887B4;
+}
+#actions-text {
+    margin-left: 15px;
+    font-size: 14px;
+    line-height: 20px;
+    font-weight: 400;
+}
+.board-text {
+    margin-left: 10px !important;
+}
+.workspace-views {
+    height: 110px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+.workspace-views h2 {
+    font-size: 14px;
+    font-weight: 600;
+    padding-left: 10px;
+}
+.workspace-views ul li{
+    margin-bottom: 10px;
+    cursor: pointer;
+    padding: 3px;
+    width: 300px;
+    margin-left: 0;
+    padding-left: 13px;
+}
+.workspace-views ul li:first-child {
+    margin-top: 8px;
+}
+.workspace-views ul li:hover {
+    background-color: #3887B4;
+}
+#workspace-text {
+    margin-left: 15px;
+    font-size: 14px;
+    line-height: 20px;
+    font-weight: 400;
+    font-style: italic;
+}
+.your-boards h2 {
+    font-size: 14px;
+    font-weight: 600;
+    padding-left: 10px;
+    display: flex;
+    justify-content: space-between;
+}
+.your-boards h2 .fa-plus {
+    margin-right: 11px;
+    padding: 8px 11px;
+    cursor: pointer;
+}
+.your-boards h2 .fa-plus:hover {
+    background-color: #3887B4;
+    border-radius: 3px;
+}
+/* .premium {
+
+} */
+.deneme {
+    border-top: 1px solid rgba(175, 175, 175,0.5);
+}
+/* .premium-btn {
+    background-color: black;
+} */
