@@ -32,12 +32,12 @@ function SideBar() {
                 <Board />
                 
             </div>
-            <div className="premium">
+            {/* <div className="premium">
                     <button className='premium-btn'>
                         <i class="fa-solid fa-suitcase"></i><span>Try Premium free</span>    
                     </button>
                    
-            </div>
+            </div> */}
         </div>
     </>
   );
