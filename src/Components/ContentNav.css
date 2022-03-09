@@ -10,4 +10,22 @@
     background-color: #0079BF;
     width: 82vw;
     height: 93vh;
+    display: flex;
+    justify-content: space-between;
+}
+.left-list {
+    display: flex;
+    justify-content: center;
+}
+.left-list li span{
+    display: flex;
+    justify-content: center;
+}
+.right-list {
+    display: flex;
+    justify-content: center;
+}
+.right-list li span {
+    display: flex;
+    justify-content: center;
 }
