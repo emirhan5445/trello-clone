@@ -1,4 +1,6 @@
-// import { Link } from 'react-router-dom';
+import { Link } from 'react-router-dom';
+import Avatar from '@mui/material/Avatar';
+import { deepOrange } from '@mui/material/colors';
 import './NavBar.css';
 
 function NavBar() {
@@ -19,8 +21,9 @@ function NavBar() {
                 <li><input className='search-form' type="text" placeholder="&#61442; Search..."/></li>
                 <li><i className="fa fa-info-circle"></i></li>
                 <li><i className="fa fa-solid fa-bell"></i></li>
-                {/* <Link to='/LogIn'><li><i className="fa fa-solid fa-user-plus"></i></li></Link> */}
-                <li><i className="fa fa-solid fa-user-plus"></i></li>
+                {/* <Link to='/LogIn'><li><i id='link' className="fa fa-solid fa-user-plus"></i></li></Link> */}
+                <Avatar sx={{ width: 35, height: 35, bgcolor: deepOrange[500] }} variant="rounded">eg</Avatar>
+                {/* <li><i className="fa fa-solid fa-user-plus"></i></li> */}
             </ul>  
         </div>
     </>

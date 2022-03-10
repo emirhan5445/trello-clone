@@ -2,6 +2,9 @@ import './SideBar.css';
 import Board from './Board';
 import { useContext } from 'react';
 import { AppContext } from '../Contexts/AppContext';
+import Avatar from '@mui/material/Avatar';
+import { deepOrange } from '@mui/material/colors';
+import { Link } from 'react-router-dom';
 
 function SideBar() {
     const { setIsTrue } = useContext(AppContext);  
@@ -11,8 +14,10 @@ function SideBar() {
         <div className="left-content">
             <div className="account">
                 <ul>
-                    <li className='li-settings'><i className="fa fa-solid fa-user-plus"></i><span id='account-text'>Deneme</span></li>
-                    <li onClick={() => setIsTrue(true)} className='li-settings'><i /* onClick={setIsTrue(true)} */ className="fa fa-angle-left"></i> </li>
+                
+                {/* <li className='li-settings'><Avatar sx={{ width: 30, height: 30, bgcolor: deepOrange[500] }} variant="rounded"></Avatar><span id='account-text'>Deneme</span></li> */}
+                <Link to='/LogIn'><li className='li-settings'><i className="fa fa-solid fa-user-plus"></i><span id='account-text'>Deneme</span></li></Link>
+                    <li onClick={() => setIsTrue(true)} className='li-settings'><i className="fa fa-angle-left"></i> </li>
                 </ul>
                 
             </div>
@@ -32,16 +37,8 @@ function SideBar() {
             </div>
             <div className="your-boards">
                 <h2>Your boards<span><i className="fa-solid fa-plus"></i></span></h2>
-                <Board />
-                <Board /> {/* bootstrap color picker  */}
-                
+                <Board /> {/* bootstrap color picker  */}   
             </div>
-            {/* <div className="premium">
-                    <button className='premium-btn'>
-                        <i class="fa-solid fa-suitcase"></i><span>Try Premium free</span>    
-                    </button>
-                   
-            </div> */}
         </div>
     </>
   );
