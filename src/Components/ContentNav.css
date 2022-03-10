@@ -12,20 +12,111 @@
     height: 93vh;
     display: flex;
     justify-content: space-between;
+    padding: 1rem;
 }
 .left-list {
     display: flex;
     justify-content: center;
 }
+
 .left-list li span{
     display: flex;
     justify-content: center;
+    background-color: #52A4D4;
+    width: auto;
+    height: 35px;
+    padding: 0.4rem;
+    margin-right: 0.7rem;
+    border-radius: 5px;
+    cursor: pointer;
+}
+.left-list li span:hover {
+    filter: brightness(1.05);
+}
+.cizgi {
+    width: 1px;
+    height: 35px;
+    background-color: rgba(175, 175, 175,0.7);
+    margin-right: 0.7rem;
+}
+.left-list li:first-child span {
+    position: relative;
+    padding-right: 2rem;
+}
+.left-list li:nth-child(3) span{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 0 0.5rem;
+
+}
+.left-list li:nth-child(3) span i {
+    font-size: 14px;
+}
+.left-list li:nth-child(3) span i:hover {
+    color: #f2d600;
+
+}
+.left-list li:last-child span  {
+    background-color: white;
+    color: black;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.left-list li:last-child span .fa-user-plus {
+    color: rgb(0, 0, 0);
+    font-size: 14px;
+    margin-right: 0.5rem;
+}
+.board-angle {
+    position: absolute;
+    right: 10px;
+    top: 10.5px;
 }
 .right-list {
     display: flex;
     justify-content: center;
 }
-.right-list li span {
+
+.right-list li span{
     display: flex;
     justify-content: center;
+    background-color: #52A4D4;
+    width: auto;
+    height: 35px;
+    padding: 0.4rem;
+    margin-right: 0.7rem;
+    border-radius: 5px;
+    cursor: pointer;
 }
+.right-list li span:hover {
+    filter: brightness(1.05);
+}
+.cizgi {
+    width: 1px;
+    height: 35px;
+    background-color: rgba(175, 175, 175,0.7);
+    margin-right: 0.7rem;
+}
+.right-list li:first-child span {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.right-list li:first-child span i {
+    margin-right: 0.3rem;
+    font-size: 14px;
+}
+.right-list li:last-child span {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.right-list li:last-child span i{
+    margin-right: 0.3rem;
+    font-size: 14px;
+}
+/* #width {
+    width: 100vw;
+} */

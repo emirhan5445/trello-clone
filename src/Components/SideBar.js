@@ -1,14 +1,18 @@
 import './SideBar.css';
 import Board from './Board';
+import { useContext } from 'react';
+import { AppContext } from '../Contexts/AppContext';
 
 function SideBar() {
+    const { setIsTrue } = useContext(AppContext);  
+
   return (
     <>   
         <div className="left-content">
             <div className="account">
                 <ul>
                     <li className='li-settings'><i className="fa fa-solid fa-user-plus"></i><span id='account-text'>Deneme</span></li>
-                    <li className='li-settings'><i className="fa fa-angle-left"></i> </li>
+                    <li onClick={() => setIsTrue(true)} className='li-settings'><i /* onClick={setIsTrue(true)} */ className="fa fa-angle-left"></i> </li>
                 </ul>
                 
             </div>
@@ -27,9 +31,9 @@ function SideBar() {
                 </ul>
             </div>
             <div className="your-boards">
-                <h2>Your boards<span><i class="fa-solid fa-plus"></i></span></h2>
+                <h2>Your boards<span><i className="fa-solid fa-plus"></i></span></h2>
                 <Board />
-                <Board />
+                <Board /> {/* bootstrap color picker  */}
                 
             </div>
             {/* <div className="premium">

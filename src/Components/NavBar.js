@@ -1,3 +1,4 @@
+// import { Link } from 'react-router-dom';
 import './NavBar.css';
 
 function NavBar() {
@@ -18,6 +19,7 @@ function NavBar() {
                 <li><input className='search-form' type="text" placeholder="&#61442; Search..."/></li>
                 <li><i className="fa fa-info-circle"></i></li>
                 <li><i className="fa fa-solid fa-bell"></i></li>
+                {/* <Link to='/LogIn'><li><i className="fa fa-solid fa-user-plus"></i></li></Link> */}
                 <li><i className="fa fa-solid fa-user-plus"></i></li>
             </ul>  
         </div>
