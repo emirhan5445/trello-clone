@@ -34,7 +34,7 @@
     background-color: #3887B4;
     border-radius: 3px;
 }
-.nav-bar-left li:last-child:hover {
+.nav-bar-left li:last-child:hover, #link:hover {
     padding: 7px 8px;
     background-color: #3887B4;
     border-radius: 3px;
