@@ -3,15 +3,25 @@ import './LogInPage.css';
 function LogInPage() {
     return (
         <>
-            <div className="wrapped">
-                <div className="row">
-                    <div className="col">
-                        <input type="text" className="form-control" placeholder="First name" aria-label="First name" />
+            <div class="login-box">
+                <h2>Log-In</h2>
+                <form>
+                    <div class="user-box">
+                        <input type="text" name="" required="" />
+                        <label>First Name</label>
                     </div>
-                    <div className="col">
-                        <input type="text" className="form-control" placeholder="Last name" aria-label="Last name" />
+                    <div class="user-box">
+                        <input type="text" name="" required="" />
+                        <label>Last Name</label>
                     </div>
-                </div>
+                    <a href="#">
+                        <span></span>
+                        <span></span>
+                        <span></span>
+                        <span></span>
+                        Submit
+                    </a>
+                </form>
             </div>
         </>
     );
