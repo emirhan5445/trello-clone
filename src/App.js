@@ -6,40 +6,44 @@ import ContentNav from './Components/ContentNav';
 import { AppContext } from './Contexts/AppContext';
 // import AddList from './Components/AddList';
 /* import ClosedSide from './Components/ClosedSide'; */
-/* import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
-import LogInPage from './Components/LogInPage'; */
+import { Routes, Route } from "react-router-dom";
+import LogInPage from './Components/LogInPage';
+import Container from './Components/Container';
 
 function App() {
   const [isTrue, setIsTrue] = useState(false);
+  const [changeClass, setChangeClas] = useState('80vw'); 
 
   return (
     <>
-        <NavBar />
-        <AppContext.Provider value={{ setIsTrue }} >
+      <NavBar />
+      <AppContext.Provider value={{ setIsTrue, setChangeClas, changeClass, isTrue }} >
+      <Routes>
           {
+
             isTrue ?
 
 
+              <Route path='/' element={<ContentNav />} />
 
-              <ContentNav />
 
               :
-              <>
-              <div className="wrapped">
-                
-                <SideBar />
-                <div className="column">
-                  <ContentNav />
-                  {/* <AddList /> */}
-                </div>
 
-              </div>
-              </>
-          }
 
-          
-        </AppContext.Provider>
-
+              
+              <Route path='/' element={<Container />} />
+              
+              
+              
+              
+              
+            }
+          <Route path='/LogIn' element={<LogInPage />} />
+            {/* <Route path='/' element={<SideBar />} />
+              <Route path='/' element={<ContentNav />} /> */}
+          {/* <div className="wrapped"></div>  */}
+        </Routes>
+      </AppContext.Provider>
     </>
   );
 }
