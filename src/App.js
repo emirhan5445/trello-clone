@@ -1,7 +1,6 @@
 import React, { useState } from 'react';
 import './App.css';
 import NavBar from './Components/NavBar';
-import SideBar from './Components/SideBar';
 import ContentNav from './Components/ContentNav';
 import { AppContext } from './Contexts/AppContext';
 // import AddList from './Components/AddList';
@@ -37,11 +36,8 @@ function App() {
               
               
               
-            }
+            }  
           <Route path='/LogIn' element={<LogInPage />} />
-            {/* <Route path='/' element={<SideBar />} />
-              <Route path='/' element={<ContentNav />} /> */}
-          {/* <div className="wrapped"></div>  */}
         </Routes>
       </AppContext.Provider>
     </>

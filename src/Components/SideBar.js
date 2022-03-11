@@ -1,22 +1,27 @@
 import './SideBar.css';
 import Board from './Board';
-import { useContext } from 'react';
+import { useContext, useEffect } from 'react';
 import { AppContext } from '../Contexts/AppContext';
-import Avatar from '@mui/material/Avatar';
-import { deepOrange } from '@mui/material/colors';
+import { selectUserName, selectUserSurname } from '../features/userSlice';
+import { useSelector } from 'react-redux';
+/* import Avatar from '@mui/material/Avatar';
+import { deepOrange } from '@mui/material/colors'; */
 import { Link } from 'react-router-dom';
 
 function SideBar() {
-    const { setIsTrue } = useContext(AppContext);  
+    const userName = useSelector(selectUserName);
+    const userSurname = useSelector(selectUserSurname);
+    
+    const { setIsTrue } = useContext(AppContext); 
 
-  return (
+    return (
     <>   
         <div className="left-content">
             <div className="account">
                 <ul>
                 
                 {/* <li className='li-settings'><Avatar sx={{ width: 30, height: 30, bgcolor: deepOrange[500] }} variant="rounded"></Avatar><span id='account-text'>Deneme</span></li> */}
-                <Link to='/LogIn'><li className='li-settings'><i className="fa fa-solid fa-user-plus"></i><span id='account-text'>Deneme</span></li></Link>
+                <Link to='/LogIn'><li className='li-settings'><i className="fa fa-solid fa-user-plus"></i><span id='account-text'>{userName}</span></li></Link>
                     <li onClick={() => setIsTrue(true)} className='li-settings'><i className="fa fa-angle-left"></i> </li>
                 </ul>
                 
