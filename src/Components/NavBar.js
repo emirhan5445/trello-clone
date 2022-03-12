@@ -1,9 +1,17 @@
-import { Link } from 'react-router-dom';
 import Avatar from '@mui/material/Avatar';
 import { deepOrange } from '@mui/material/colors';
 import './NavBar.css';
+import { AppContext } from '../Contexts/AppContext';
+import { useContext } from 'react';
+// import { useSelector } from 'react-redux';
+// import { selectUserName, selectUserSurname } from '../features/userSlice';
+
 
 function NavBar() {
+  const { surnameLetter, letter } = useContext(AppContext);
+
+  // console.log(letter, surnameLetter);
+  console.log(letter);
   return (
     <>
         
@@ -22,8 +30,11 @@ function NavBar() {
                 <li><i className="fa fa-info-circle"></i></li>
                 <li><i className="fa fa-solid fa-bell"></i></li>
                 {/* <Link to='/LogIn'><li><i id='link' className="fa fa-solid fa-user-plus"></i></li></Link> */}
-                <Avatar sx={{ width: 35, height: 35, bgcolor: deepOrange[500] }}>eg</Avatar>
-                {/* <li><i className="fa fa-solid fa-user-plus"></i></li> */}
+                <Avatar sx={{ width: 35, height: 35, bgcolor: deepOrange[500], marginRight:"12px" }}>{
+                  letter !== null ?
+                  letter :
+                  null   
+                }</Avatar>    
             </ul>  
         </div>
     </>

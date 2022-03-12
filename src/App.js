@@ -1,29 +1,37 @@
 import React, { useState } from 'react';
 import './App.css';
 import NavBar from './Components/NavBar';
-import ContentNav from './Components/ContentNav';
 import { AppContext } from './Contexts/AppContext';
-// import AddList from './Components/AddList';
-/* import ClosedSide from './Components/ClosedSide'; */
 import { Routes, Route } from "react-router-dom";
 import LogInPage from './Components/LogInPage';
 import Container from './Components/Container';
+import ContainerOfClosed from './Components/ContainerOfClosed';
 
 function App() {
   const [isTrue, setIsTrue] = useState(false);
   const [changeClass, setChangeClas] = useState('80vw'); 
+  const [letter, setLetter] = useState(null);
+  const [surnameLetter, setSurnameLetter] = useState(null);
+
+  const getUppercase = name => {
+    setLetter(name.charAt(0).toUpperCase());
+  };
+
+  const getUppercaseSurname = name => {
+    setSurnameLetter(name.charAt(0).toUpperCase());
+  };
 
   return (
     <>
       <NavBar />
-      <AppContext.Provider value={{ setIsTrue, setChangeClas, changeClass, isTrue }} >
+      <AppContext.Provider value={{ setIsTrue, setChangeClas, changeClass, isTrue, letter, getUppercase, getUppercaseSurname, surnameLetter }} >
       <Routes>
           {
 
             isTrue ?
 
 
-              <Route path='/' element={<ContentNav />} />
+              <Route path='/' element={<ContainerOfClosed />} />
 
 
               :
@@ -39,6 +47,7 @@ function App() {
             }  
           <Route path='/LogIn' element={<LogInPage />} />
         </Routes>
+        {/* <AddList /> */}
       </AppContext.Provider>
     </>
   );

@@ -10,9 +10,13 @@
     background-color: #0079BF;
     width: 82vw;
     height: 93vh;
-    display: flex;
-    justify-content: space-between;
+    /* display: flex;
+    justify-content: space-between; */
     padding: 1rem;
+}
+.right-content-container {
+    display:flex;
+    justify-content: space-between;
 }
 .left-list {
     display: flex;
@@ -114,6 +118,9 @@
 .right-list li:last-child span i{
     margin-right: 0.3rem;
     font-size: 14px;
+}
+.right-list , .left-list {
+    height : 50px;
 }
 /* #width {
     width: 100vw;
