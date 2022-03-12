@@ -22,7 +22,7 @@ function NavBar() {
                 <li><i className="fa fa-info-circle"></i></li>
                 <li><i className="fa fa-solid fa-bell"></i></li>
                 {/* <Link to='/LogIn'><li><i id='link' className="fa fa-solid fa-user-plus"></i></li></Link> */}
-                <Avatar sx={{ width: 35, height: 35, bgcolor: deepOrange[500] }} variant="rounded">eg</Avatar>
+                <Avatar sx={{ width: 35, height: 35, bgcolor: deepOrange[500] }}>eg</Avatar>
                 {/* <li><i className="fa fa-solid fa-user-plus"></i></li> */}
             </ul>  
         </div>

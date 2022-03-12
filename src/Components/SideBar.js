@@ -1,27 +1,42 @@
 import './SideBar.css';
 import Board from './Board';
-import { useContext, useEffect } from 'react';
+import { useContext, useState } from 'react';
 import { AppContext } from '../Contexts/AppContext';
 import { selectUserName, selectUserSurname } from '../features/userSlice';
 import { useSelector } from 'react-redux';
-/* import Avatar from '@mui/material/Avatar';
-import { deepOrange } from '@mui/material/colors'; */
+import Avatar from '@mui/material/Avatar';
+import { deepOrange } from '@mui/material/colors';
 import { Link } from 'react-router-dom';
 
 function SideBar() {
-    const userName = useSelector(selectUserName);
-    const userSurname = useSelector(selectUserSurname);
-    
     const { setIsTrue } = useContext(AppContext); 
 
-    return (
+    const [letter, setLetter] = useState(null);
+    
+    const userName = useSelector(selectUserName);
+    const userSurname = useSelector(selectUserSurname);
+
+    const getUppercase = name => {
+        setLetter(name.charAt(0).toUpperCase());
+        
+    };
+
+    console.log(letter);
+
+    return (/* (userName.userName === undefined) ?
+    letter :
+    getUppercase(userName.userName)  */
     <>   
         <div className="left-content">
             <div className="account">
-                <ul>
-                
-                {/* <li className='li-settings'><Avatar sx={{ width: 30, height: 30, bgcolor: deepOrange[500] }} variant="rounded"></Avatar><span id='account-text'>Deneme</span></li> */}
-                <Link to='/LogIn'><li className='li-settings'><i className="fa fa-solid fa-user-plus"></i><span id='account-text'>{userName}</span></li></Link>
+                <ul>                
+                <Link to='/LogIn'><li className='li-settings'><Avatar variant="rounded" sx={{ bgcolor: deepOrange[500] }}>{
+                    letter
+                }</Avatar>{/* <i className="fa fa-solid fa-user-plus"></i> */}<span id='account-text'>{
+                    (userName.userName === undefined) ?
+                    'Untitled' :
+                    userName.userName
+                }</span></li></Link>
                     <li onClick={() => setIsTrue(true)} className='li-settings'><i className="fa fa-angle-left"></i> </li>
                 </ul>
                 

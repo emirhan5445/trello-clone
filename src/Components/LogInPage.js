@@ -2,23 +2,9 @@ import './LogInPage.css';
 import { useDispatch } from 'react-redux';
 import { setName, setSurname } from '../features/userSlice';
 import { Link } from "react-router-dom";
-import { useEffect } from 'react';
-import { useSelector } from 'react-redux';
-import { selectUserName, selectUserSurname } from '../features/userSlice';
 
 function LogInPage() {
-    const userName = useSelector(selectUserName);
-
-    const dispatch = useDispatch();
-
-    /* const handleFormSubmit = e => {
-        e.preventDefault();
-        
-    } */
-
-    
-
-    
+    const dispatch = useDispatch();    
 
     return (
         <>
@@ -37,7 +23,7 @@ function LogInPage() {
                         }))} type="text" name="" required="" />
                         <label>Last Name</label>
                     </div>
-                    <div /* onClick={() => handleFormSubmit()} */ /* href="#!" */> 
+                    <div> 
                         <span></span>
                         <span></span>
                         <span></span>
