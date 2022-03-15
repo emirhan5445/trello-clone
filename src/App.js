@@ -20,7 +20,7 @@ function App() {
   const getUppercaseSurname = name => {
     setSurnameLetter(name.charAt(0).toUpperCase());
   };
-
+  console.log(window.location.href);
   return (
     <>
       <NavBar />

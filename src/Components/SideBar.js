@@ -28,7 +28,7 @@ function SideBar() {
                                         }</Avatar>{
                                     (userName.userName === undefined) ?
                                         <div id='account-text-div'>Untitled</div> :
-                                        <div className='account-text-margin'>{userName.userName}</div>
+                                    <div className='account-text-margin'>{userName.userName}</div>
                                 }</span>
                             </li>
                         </Link>
