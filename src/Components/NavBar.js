@@ -6,17 +6,13 @@ import { useContext } from 'react';
 // import { useSelector } from 'react-redux';
 // import { selectUserName, selectUserSurname } from '../features/userSlice';
 
-
 function NavBar() {
-  const { letter } = useContext(AppContext);
-
-  console.log(window.location.href === 'http://localhost:3000/');
+  const { letter, surnameLetter } = useContext(AppContext);
+  
+  console.log(surnameLetter);
 
   return (
-    <>{/* home page tekrar yönlendirdiğinde navbar render edilmiyor  */}
-        {
-          window.location.href === 'http://localhost:3000/' ? console.log(letter) : null
-        }
+    <>
         <div className="nav-bar">
             <ul className="nav-bar-left">
                 <li><i className="fa fa-grip-horizontal"></i></li>
@@ -31,10 +27,9 @@ function NavBar() {
                 <li><input className='search-form' type="text" placeholder="&#61442; Search..."/></li>
                 <li><i className="fa fa-info-circle"></i></li>
                 <li><i className="fa fa-solid fa-bell"></i></li>
-                {/* <Link to='/LogIn'><li><i id='link' className="fa fa-solid fa-user-plus"></i></li></Link> */}
-                <Avatar sx={{ width: 35, height: 35, bgcolor: deepOrange[500], marginRight:"12px" }}>{
-                  letter !== undefined && window.location.href === 'http://localhost:3000/'  ?
-                  letter :
+                <Avatar sx={{ width: 35, height: 35, bgcolor: deepOrange[500], marginRight: "12px", color: 'black' }}>{
+                  letter !== null && surnameLetter !== null /* && window.location.href === 'http://localhost:3000/' */  ?
+                  letter + surnameLetter :
                   null   
                 }</Avatar>    
             </ul>  
