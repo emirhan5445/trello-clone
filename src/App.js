@@ -11,20 +11,16 @@ function App() {
   const [isTrue, setIsTrue] = useState(false);
   const [changeClass, setChangeClas] = useState('80vw'); 
   const [letter, setLetter] = useState(null);
-  const [surnameLetter, setSurnameLetter] = useState(null);
+  const [surnameLetter] = useState(null);
 
   const getUppercase = name => {
-    setLetter(name.charAt(0).toUpperCase());
+    return name.charAt(0).toUpperCase();
   };
 
-  const getUppercaseSurname = name => {
-    setSurnameLetter(name.charAt(0).toUpperCase());
-  };
-  console.log(window.location.href);
   return (
     <>
+      <AppContext.Provider value={{ setIsTrue, setChangeClas, changeClass, isTrue, letter, getUppercase, surnameLetter, setLetter }} >
       <NavBar />
-      <AppContext.Provider value={{ setIsTrue, setChangeClas, changeClass, isTrue, letter, getUppercase, getUppercaseSurname, surnameLetter }} >
       <Routes>
           {
 

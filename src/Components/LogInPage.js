@@ -12,12 +12,18 @@ function LogInPage() {
 
     const userName = useSelector(selectUserName);
     
-    const { getUppercase, getUppercaseSurname } = useContext(AppContext);
+    const { getUppercase, setLetter  /* getUppercaseSurname, */  } = useContext(AppContext);
 
+    
     useEffect(() => {
-        (userName.userName === undefined) ? console.log() : getUppercase(userName.userName);
+        
+        (userName.userName === undefined) ? console.log() : setLetter(getUppercase(userName.userName));
+        // (userName.userName !== undefined) ? console.log() : setLetter(getUppercase(userName.UserName));
+        
+        
         // (userSurname.userSurname === undefined) ? console.log('hello') : getUppercaseSurname(userSurname.userSurname);
-    }, [getUppercase, userName.userName /* userSurname.userSurname */, getUppercaseSurname]);
+        
+    }, [getUppercase, userName.userName, setLetter /* userSurname.userSurname */ /* getUppercaseSurname */]);
 
     return (
         <>

@@ -12,7 +12,7 @@ function SideBar() {
     const { setIsTrue, letter } = useContext(AppContext);
 
     const userName = useSelector(selectUserName);
-    console.log(letter);
+
     return (
         <>
             <div className="left-content">
