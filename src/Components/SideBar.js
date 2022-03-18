@@ -7,9 +7,10 @@ import { useSelector } from 'react-redux';
 import Avatar from '@mui/material/Avatar';
 import { deepOrange } from '@mui/material/colors';
 import { Link } from 'react-router-dom';
+import ModalOfPage from './ModalOfPage';
 
 function SideBar() {
-    const { setIsTrue, letter } = useContext(AppContext);
+    const { setIsTrue, letter, isOpen } = useContext(AppContext);
 
     const userName = useSelector(selectUserName);
 
@@ -51,9 +52,10 @@ function SideBar() {
                     </ul>
                 </div>
                 <div className="your-boards">
-                    <h2>Your boards<span><i className="fa-solid fa-plus"></i></span></h2>
+                    <h2>Your boards<span /* onClick={() => <ModalOfPage onClose={() => setIsOpen(currentShow => !currentShow)} open={isOpen} /> }*/ ><i className="fa-solid fa-plus"></i></span></h2>
                     <Board /> {/* bootstrap color picker  */}
                 </div>
+                {/* <ModalOfPage /> */}
             </div>
         </>
     );

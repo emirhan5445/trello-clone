@@ -27,7 +27,7 @@ function NavBar() {
                 <li><input className='search-form' type="text" placeholder="&#61442; Search..."/></li>
                 <li><i className="fa fa-info-circle"></i></li>
                 <li><i className="fa fa-solid fa-bell"></i></li>
-                <Avatar sx={{ width: 35, height: 35, bgcolor: deepOrange[500], marginRight: "12px", color: 'black' }}>{
+                <Avatar sx={{ width: 35, height: 35, bgcolor: deepOrange[500], marginRight: "12px" }}>{
                   letter !== null && surnameLetter !== null /* && window.location.href === 'http://localhost:3000/' */  ?
                   letter + surnameLetter :
                   null   
