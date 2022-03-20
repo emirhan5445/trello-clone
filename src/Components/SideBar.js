@@ -7,12 +7,19 @@ import { useSelector } from 'react-redux';
 import Avatar from '@mui/material/Avatar';
 import { deepOrange } from '@mui/material/colors';
 import { Link } from 'react-router-dom';
-import ModalOfPage from './ModalOfPage';
+import { v4 as uuidv4 } from 'uuid';
+// import ContentNav from "./ContentNav";
+// import ModalOfPage from './ModalOfPage';
 
 function SideBar() {
-    const { setIsTrue, letter, isOpen } = useContext(AppContext);
+    const { setIsTrue, letter, boards, setBoards } = useContext(AppContext);
 
     const userName = useSelector(selectUserName);
+
+    const handleAddBoard = () => {
+        const boardName = prompt('Enter the board name');
+        boardName ? setBoards([...boards, {boardName: boardName}]) : console.log();
+    };
 
     return (
         <>
@@ -22,14 +29,14 @@ function SideBar() {
                         <Link to='/LogIn'>
                             <li className='li-settings'>
                                 <span id='account-text'>
-                                        <Avatar variant="rounded" sx={{ bgcolor: deepOrange[500] }}>{
-                                            letter !== null ?
-                                            <div>{letter}</div> :
-                                            null
-                                        }</Avatar>{
+                                    <Avatar variant="rounded" sx={{ bgcolor: deepOrange[500] }}>{
+                                        letter !== null ?
+                                        <div>{letter}</div> :
+                                        null
+                                    }</Avatar>{
                                     (userName.userName === undefined) ?
                                         <div id='account-text-div'>Untitled</div> :
-                                    <div className='account-text-margin'>{userName.userName}</div>
+                                        <div className='account-text-margin'>{userName.userName}</div>
                                 }</span>
                             </li>
                         </Link>
@@ -52,10 +59,14 @@ function SideBar() {
                     </ul>
                 </div>
                 <div className="your-boards">
-                    <h2>Your boards<span /* onClick={() => <ModalOfPage onClose={() => setIsOpen(currentShow => !currentShow)} open={isOpen} /> }*/ ><i className="fa-solid fa-plus"></i></span></h2>
-                    <Board /> {/* bootstrap color picker  */}
+                    <h2>Your boards<span><i onClick={handleAddBoard} className="fa-solid fa-plus"></i></span></h2>
+                    {
+                        boards.map(board => (
+                            <Board key={uuidv4()} boardName={board.boardName} />
+                        ))
+                    }
                 </div>
-                {/* <ModalOfPage /> */}
+                {/* <ModalOfPage /> */} {/* bootstrap color picker  */}
             </div>
         </>
     );
