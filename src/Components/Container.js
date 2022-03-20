@@ -10,7 +10,6 @@ function Container() {
             <div id="width">
                 <ContentNav />
             </div>
-        
         </div>
     </>
   );

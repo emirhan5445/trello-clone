@@ -1,6 +1,5 @@
 import './ListActions.css';
 
-
 function ListActions() {
   return (
     <>
@@ -8,7 +7,7 @@ function ListActions() {
           <input type="text" placeholder='Enter list title...'/>
           <span>
             <button>Add list</button>
-            <i class="fa-solid fa-xmark"></i>
+            <i className="fa-solid fa-xmark"></i>
           </span>
       </div>
     </>

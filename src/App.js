@@ -13,6 +13,7 @@ function App() {
   const [letter, setLetter] = useState(null);
   const [isOpen, setIsOpen] = useState(true);
   const [surnameLetter, setSurnameLetter] = useState(null);
+  const [boards, setBoards] = useState([]);
 
   const getUppercase = name => {
     return name.charAt(0).toUpperCase();
@@ -20,7 +21,7 @@ function App() {
 
   return (
     <>
-      <AppContext.Provider value={{ setIsOpen, isOpen, setIsTrue, setChangeClas, changeClass, isTrue, letter, getUppercase, surnameLetter, setLetter, setSurnameLetter }} >
+      <AppContext.Provider value={{ boards, setBoards, setIsOpen, isOpen, setIsTrue, setChangeClas, changeClass, isTrue, letter, getUppercase, surnameLetter, setLetter, setSurnameLetter }} >
       <NavBar />
       <Routes>
           {
@@ -44,7 +45,6 @@ function App() {
             }  
           <Route path='/LogIn' element={<LogInPage />} />
         </Routes>
-        {/* <AddList /> */}
       </AppContext.Provider>
     </>
   );

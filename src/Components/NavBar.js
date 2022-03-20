@@ -3,14 +3,10 @@ import { deepOrange } from '@mui/material/colors';
 import './NavBar.css';
 import { AppContext } from '../Contexts/AppContext';
 import { useContext } from 'react';
-// import { useSelector } from 'react-redux';
-// import { selectUserName, selectUserSurname } from '../features/userSlice';
 
 function NavBar() {
   const { letter, surnameLetter } = useContext(AppContext);
   
-  console.log(surnameLetter);
-
   return (
     <>
         <div className="nav-bar">

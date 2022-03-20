@@ -1,11 +1,10 @@
 import './Boards.css';
 
-function Board({ id, board }) {
+function Board({ boardName }) {
   return (
     <>
         <ul className='board-ul'>
-            <li><i className="fa-solid fa-square"></i><span id='name-text'>List name</span></li>
-            <li><i className="fa-solid fa-square"></i><span id='name-text'>List name</span></li>
+            <li><i className="fa-solid fa-square"></i><span id='name-text'>{boardName}</span></li>
         </ul>
     </>
   );
