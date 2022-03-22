@@ -8,7 +8,7 @@ import Avatar from '@mui/material/Avatar';
 import { deepOrange } from '@mui/material/colors';
 import { Link } from 'react-router-dom';
 import { v4 as uuidv4 } from 'uuid';
-// import ContentNav from "./ContentNav";
+import ContentNav from "./ContentNav";
 // import ModalOfPage from './ModalOfPage';
 
 function SideBar() {
@@ -62,7 +62,10 @@ function SideBar() {
                     <h2>Your boards<span><i onClick={handleAddBoard} className="fa-solid fa-plus"></i></span></h2>
                     {
                         boards.map(board => (
-                            <Board key={uuidv4()} boardName={board.boardName} />
+                            <div key={uuidv4()} /* onClick={() => <ContentNav />} */>
+                                <Board id={uuidv4()} boardName={board.boardName} />
+
+                            </div>
                         ))
                     }
                 </div>

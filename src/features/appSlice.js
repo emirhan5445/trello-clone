@@ -10,14 +10,14 @@ export const appSlice = createSlice({
   name: 'app',
   initialState,
   reducers: {
-    selectboardId: (state, action) => {
-      
-      state.app = action.payload;
+    setBoardInfo: (state, action) => {
+      state.boardId = action.payload.boardId;
+      state.boardName = action.payload.boardName;
     },
   }
 });
 
-export const { selectboardId } = appSlice.actions;
+export const { setBoardInfo } = appSlice.actions;
 
 export const selectBoardId = (state) => state.app.boardId;
 export const selectBoardName = (state) => state.app.boardName;

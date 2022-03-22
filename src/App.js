@@ -6,6 +6,7 @@ import { Routes, Route } from "react-router-dom";
 import LogInPage from './Components/LogInPage';
 import Container from './Components/Container';
 import ContainerOfClosed from './Components/ContainerOfClosed';
+// import SideBar from './Components/SideBar';
 
 function App() {
   const [isTrue, setIsTrue] = useState(false);
@@ -36,14 +37,14 @@ function App() {
 
 
               
+              
+              
               <Route path='/' element={<Container />} />
               
               
               
-              
-              
             }  
-          <Route path='/LogIn' element={<LogInPage />} />
+          <Route path='/LogIn' element={<LogInPage />} /> 
         </Routes>
       </AppContext.Provider>
     </>

@@ -1,12 +1,22 @@
+import { useState } from 'react';
 import './ListActions.css';
 
-function ListActions() {
+
+function ListActions({ boardId }) {
+  const [input, setInput] = useState('');
+
   return (
     <>
       <div className='list-actions'>
-          <input type="text" placeholder='Enter list title...'/>
+          <input 
+            disabled={!boardId}
+            value={input}
+            onClick={e => setInput(e.target.value)}
+            type="text" 
+            placeholder='Enter list title...'
+          />
           <span>
-            <button>Add list</button>
+            <button disabled={!boardId}>Add list</button>
             <i className="fa-solid fa-xmark"></i>
           </span>
       </div>

@@ -8,9 +8,13 @@ import AddList from '../Components/AddList';
 import { useContext } from 'react';
 import { AppContext } from '../Contexts/AppContext';
 import ListActions from './ListActions';
+import { selectBoardId } from '../features/appSlice';
+import { useSelector } from 'react-redux';
 
-function ContentNav() {
+
+function ContentNav({ boardName }) {
   const { isTrue } = useContext(AppContext);
+  const boardId = useSelector(selectBoardId);
 
   return (
     <>
@@ -19,7 +23,7 @@ function ContentNav() {
           <div className='right-content' style={{ width: '99vw', height: '93vh' }} id='width'>
             <ul className='left-list'>
               <li><span><BarChartOutlinedIcon /> Board <i className="fa fa-angle-down board-angle"></i> </span></li>
-              <li><span>Untitled</span></li>
+              <li><span>{boardName}</span></li>
               <li><span><i className="fa-regular fa-star"></i></span></li>
               <li className='cizgi'></li>
               <li><span>Name</span></li>
@@ -42,7 +46,7 @@ function ContentNav() {
             <div className='right-content-container'>
               <ul className='left-list'>
                 <li><span><BarChartOutlinedIcon /> Board <i className="fa fa-angle-down board-angle"></i> </span></li>
-                <li><span>Untitled</span></li>
+                <li><span>{boardName}</span></li>
                 <li><span><i className="fa-regular fa-star"></i></span></li>
                 <li className='cizgi'></li>
                 <li><span>Name</span></li>
@@ -62,7 +66,7 @@ function ContentNav() {
               </ul>
             </div>
             <AddList />
-            <ListActions />
+            <ListActions boardId={boardId} />
           </div>     
       }
     </>
