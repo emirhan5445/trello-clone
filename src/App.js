@@ -15,6 +15,8 @@ function App() {
   const [isOpen, setIsOpen] = useState(true);
   const [surnameLetter, setSurnameLetter] = useState(null);
   const [boards, setBoards] = useState([]);
+  const [input, setInput] = useState('');
+  const [clicked, setClicked] = useState(false);
 
   const getUppercase = name => {
     return name.charAt(0).toUpperCase();
@@ -22,7 +24,7 @@ function App() {
 
   return (
     <>
-      <AppContext.Provider value={{ boards, setBoards, setIsOpen, isOpen, setIsTrue, setChangeClas, changeClass, isTrue, letter, getUppercase, surnameLetter, setLetter, setSurnameLetter }} >
+      <AppContext.Provider value={{ clicked, setClicked, input, setInput, boards, setBoards, setIsOpen, isOpen, setIsTrue, setChangeClas, changeClass, isTrue, letter, getUppercase, surnameLetter, setLetter, setSurnameLetter }} >
       <NavBar />
       <Routes>
           {

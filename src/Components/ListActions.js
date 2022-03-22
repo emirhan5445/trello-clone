@@ -1,9 +1,8 @@
-import { useState } from 'react';
 import './ListActions.css';
 
 
-function ListActions({ boardId }) {
-  const [input, setInput] = useState('');
+function ListActions({ boardId, input, setInput, setClicked }) {
+  
 
   return (
     <>
@@ -11,12 +10,12 @@ function ListActions({ boardId }) {
           <input 
             disabled={!boardId}
             value={input}
-            onClick={e => setInput(e.target.value)}
+            onChange={e => setInput(e.target.value)}
             type="text" 
             placeholder='Enter list title...'
           />
           <span>
-            <button disabled={!boardId}>Add list</button>
+            <button onClick={() => setClicked(checkEvent => !checkEvent)} disabled={!boardId}>Add list</button>
             <i className="fa-solid fa-xmark"></i>
           </span>
       </div>

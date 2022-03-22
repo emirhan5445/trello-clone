@@ -1,10 +1,11 @@
 import './AddList.css';
+import ListActions from './ListActions';
 
-function AddList() {
+function AddList({ setClicked }) {
   return (
     <>
-      <div className="add-list">
-      <span><i className="fa-solid fa-plus"></i><span>Add a list</span></span>
+      <div onClick={() => setClicked(checkEvent => !checkEvent)} className="add-list">
+        <span><i className="fa-solid fa-plus"></i><span>Add a list</span></span>
       </div>
     </>
   );

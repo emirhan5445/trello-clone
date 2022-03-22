@@ -10,10 +10,10 @@ import { AppContext } from '../Contexts/AppContext';
 import ListActions from './ListActions';
 import { selectBoardId } from '../features/appSlice';
 import { useSelector } from 'react-redux';
-
+import List from '../Components/List';
 
 function ContentNav({ boardName }) {
-  const { isTrue } = useContext(AppContext);
+  const { isTrue, input, setInput, clicked, setClicked } = useContext(AppContext);
   const boardId = useSelector(selectBoardId);
 
   return (
@@ -41,7 +41,7 @@ function ContentNav({ boardName }) {
               <li><span><FilterListIcon /> Filter</span></li>
               <li><span><i className="fa-solid fa-ellipsis"></i> Show menu</span></li>
             </ul>
-          </div> :   
+          </div> :
           <div className='right-content' style={{ width: '82vw', height: '93vh' }} id='width'>
             <div className='right-content-container'>
               <ul className='left-list'>
@@ -65,9 +65,16 @@ function ContentNav({ boardName }) {
                 <li><span><i className="fa-solid fa-ellipsis"></i> Show menu</span></li>
               </ul>
             </div>
-            <AddList />
-            <ListActions boardId={boardId} />
-          </div>     
+            <AddList setClicked={setClicked} input={input} />
+            {
+              clicked ?
+                <ListActions setClicked={setClicked} input={input} setInput={setInput} boardId={boardId} /> : null
+            } 
+            {
+              input !== '' ?
+                <List clicked={clicked} input={input} /> : null
+            }
+          </div>
       }
     </>
   );

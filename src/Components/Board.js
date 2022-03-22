@@ -1,5 +1,5 @@
 import { useDispatch } from 'react-redux';
-import './Boards.css';
+import './Board.css';
 import { setBoardInfo } from '../features/appSlice';
 
 function Board({ id, boardName }) {

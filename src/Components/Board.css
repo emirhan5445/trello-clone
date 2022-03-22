@@ -7,9 +7,25 @@
     font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
     color: white;
 }
-ul::first {
+.board-ul::first {
     margin-top: 10px;
 }
-ul li {
-    margin-left: 10px;
+.board-ul li {
+    margin-left: 0;
+    padding-left: 11px;
+    cursor: pointer;
+    margin-bottom: 5px;
+    display: flex;
+    align-items: center;
+}
+#name-text {
+    margin-left: 15px;
+    text-align: center;
+    font-size: 14px;
+}
+.board-ul li:hover {
+    background-color: #3887B4;
+}
+.fa-square {
+    font-size: 25px;
 }
